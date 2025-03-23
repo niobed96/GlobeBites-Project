@@ -23,7 +23,7 @@ function SearchBar() {
           />
           <button
             type="submit"
-            className="px-6 py-2 bg-gray-900 text-white font-medium text-lg rounded-full items-center"
+            className="px-6 py-2 ml-2 bg-gray-900 text-white font-medium text-lg rounded-full items-center"
           >
             Search
           </button>

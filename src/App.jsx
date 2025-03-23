@@ -8,6 +8,8 @@ import SubmitRecipe from "./pages/SubmitRecipe";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
 import SearchResults from "./pages/SearchResults";
+import RecipeDetails from "./components/RecipeDetails";
+import RecommendedRecipe from "./pages/RecommendedRecipe";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/Login" element={<LogIn />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/search" element={<SearchResults />} />
+        <Route path="/recipe/:id" element={<RecipeDetails />} />
+        <Route path="/recommended-recipe/:id" element={<RecommendedRecipe />} />
       </Routes>
     </>
   );

@@ -2,14 +2,20 @@ import React, { useState, useEffect } from "react";
 import SearchBar from "../components/SearchBar";
 import Footer from "../components/Footer";
 import recipeDate from "../data.json";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
   const [recipes, setRecipes] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setRecipes(recipeDate);
   }, []);
+
+  const handleRecipeClick = (recipeId) => {
+    navigate(`/recommended-recipe/${recipeId}`);
+  };
+
   return (
     <>
       <div>
@@ -51,14 +57,17 @@ function Home() {
                 <img
                   src={recipe.image}
                   alt={recipe.title}
-                  className="rounded-xl h-64 mb-7"
+                  className="rounded-xl h-4/5 mb-7"
                 />
                 <div>
                   <div className="flex justify-between items-center mb-8">
                     <h2 className="text-base font-semibold">{recipe.title}</h2>
-                    <Link className="px-3 py-1 bg-primary hover:bg-second text-center text-white font-medium rounded-full">
+                    <button
+                      onClick={() => handleRecipeClick(recipe.id)}
+                      className="px-3 py-1 bg-primary hover:bg-se text-center text-white font-medium rounded-full"
+                    >
                       View Recipe
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>
