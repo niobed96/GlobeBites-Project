@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2009/6/12/2/FO1D41_23785_s4x3.jpg.rend.hgtvcom.1280.720.suffix/1431766590243.webp",
+    "ingredients": [
+      "200g spaghetti",
+      "100g pancetta or bacon, diced",
+      "2 large eggs",
+      "50g Pecorino Romano cheese, grated",
+      "50g Parmesan cheese, grated",
+      "2 cloves garlic, minced",
+      "Freshly ground black pepper to taste"
+    ],
+    "instructions": [
+      "Cook spaghetti in salted boiling water until al dente, then drain, reserving 1 cup of pasta water.",
+      "In a skillet, cook pancetta and garlic over medium heat until crispy (5-7 minutes).",
+      "Whisk eggs and cheeses together in a bowl.",
+      "Remove skillet from heat, add spaghetti, and quickly pour in the egg mixture, tossing to coat.",
+      "Add reserved pasta water as needed to create a creamy sauce.",
+      "Season with black pepper and serve immediately."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://churchstreetbutcher.com.au/wp-content/uploads/Chicken_Tikka_Masala_333040259_web-2048x1365.jpg",
+    "ingredients": [
+      "500g chicken thighs, cubed",
+      "1 cup plain yogurt",
+      "2 tbsp tikka masala paste",
+      "1 onion, finely chopped",
+      "1 can (400g) crushed tomatoes",
+      "100ml heavy cream",
+      "2 tbsp butter",
+      "1 tsp garam masala",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Marinate chicken in yogurt and tikka paste for at least 1 hour.",
+      "Grill or pan-fry chicken until charred (8-10 minutes), then set aside.",
+      "In a large pan, melt butter and sauté onion until golden (5 minutes).",
+      "Add crushed tomatoes and garam masala, simmer for 10 minutes.",
+      "Stir in cream and cooked chicken, cook for another 5-7 minutes.",
+      "Adjust salt and serve with rice or naan."
+    ]
+  },
+
+  {
+    "id": 8,
+    "title": "Mushroom Risotto",
+    "summary": "Creamy and comforting risotto with earthy mushrooms.",
+    "image": "https://www.thespruceeats.com/thmb/0Lm0r4kYbGjxoTJRM47OrtDJxXM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/SES-mushroom-risotto-recipe-996005-hero-01-85f8cef9cf8042e8afbaa9d2e46c1fa8.jpg",
+    "ingredients": [
+      "200g Arborio rice",
+      "200g mushrooms, sliced",
+      "1 onion, finely chopped",
+      "1 liter vegetable stock, warm",
+      "50g Parmesan cheese, grated",
+      "2 tbsp butter",
+      "1 tbsp olive oil",
+      "Salt and pepper to taste"
+    ],
+    "instructions": [
+      "Heat olive oil and 1 tbsp butter in a large pan over medium heat.",
+      "Sauté onion until soft (about 3-4 minutes), then add mushrooms and cook until browned.",
+      "Stir in Arborio rice and toast for 1-2 minutes.",
+      "Gradually add warm vegetable stock, one ladle at a time, stirring until absorbed (about 20 minutes).",
+      "Stir in remaining butter and Parmesan cheese.",
+      "Season with salt and pepper to taste.",
+      "Serve hot."
+    ]
+  }
+]
