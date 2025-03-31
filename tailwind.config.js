@@ -9,7 +9,14 @@ export default {
         Third: "#D38E34",
       },
       fontFamily: {
-        inter: ["inter"],
+        inter: ["Inter"],
+      },
+      backgroundImage: {
+        bannerImg: "url('/public/Images/pexels-lum3n-44775-1410235.jpg')",
+        bannerlogin: "url('/public/Images/pexels-julieaagaard-2097090.jpg')",
+      },
+      height: {
+        slvh: ["85vh"],
       },
     },
   },

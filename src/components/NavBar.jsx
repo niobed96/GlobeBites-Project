@@ -19,7 +19,7 @@ function Navbar() {
                 <Link to="/Recipes">Recipes</Link>
               </li>
               <li className="font-medium hover:text-gray-600">
-                <Link to="Favorities">Favorities</Link>
+                <Link to="/Favorites">Favorities</Link>
               </li>
               <li className="font-medium hover:text-gray-600">
                 <Link to="/Submit-recipe">Submit Recipe</Link>

@@ -29,7 +29,7 @@ function Footer() {
         <div className="flex flex-col w-1/6 space-y-4 text-lg">
           <h2 className="font-medium">Quick Link</h2>
           <Link to="/">Home</Link>
-          <Link to="/Favorities">Favorites</Link>
+          <Link to="/favorites">Favorites</Link>
           <Link to="/Recipes">Recipe</Link>
         </div>
         <div className="flex flex-col w-1/6 text-lg space-y-4">

@@ -3,6 +3,7 @@ import SearchBar from "../components/SearchBar";
 import Footer from "../components/Footer";
 import recipeDate from "../data.json";
 import { Link, useNavigate } from "react-router-dom";
+import Navbar from "../components/NavBar";
 
 function Home() {
   const [recipes, setRecipes] = useState([]);
@@ -18,13 +19,14 @@ function Home() {
 
   return (
     <>
+      <Navbar />
       <div>
         <h1 className="text-4xl font-semibold text-center my-7 font-inter">
           Find recipe
         </h1>
       </div>
       <SearchBar />
-      <div className="flex mx-36 justify-between items-center">
+      <div className="flex mx-36 justify-between items-center fon">
         <div className="flex flex-col w-1/2">
           <h2 className="text-6xl font-bold mb-6 ">
             Discover the World’s Flavors
@@ -33,9 +35,11 @@ function Home() {
             Explore dishes from different countries and bring global cuisine to
             your kitchen
           </p>
-          <button className="mr-auto bg-Third text-white px-10 py-2 text-2xl rounded-full font-medium">
-            Explore
-          </button>
+          <Link to="/Recipes">
+            <button className="mr-auto bg-Third text-white px-10 py-2 text-2xl rounded-full font-medium">
+              Explore
+            </button>
+          </Link>
         </div>
         <div className="w-3/5">
           <img

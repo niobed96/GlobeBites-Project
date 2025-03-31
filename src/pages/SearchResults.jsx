@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import Navbar from "../components/NavBar";
 
 const SearchResults = () => {
   const [results, setResults] = useState([]);
@@ -72,40 +73,43 @@ const SearchResults = () => {
   };
 
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold text-gray-800 mb-16 text-center">
-          Recipe Results for "{query}"
-        </h1>
-        {loading ? (
-          <p className="text-center text-gray-600">Loading...</p>
-        ) : results.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {results.map((recipe) => (
-              <div
-                key={recipe.idMeal}
-                onClick={() => handleRecipeClick(recipe.idMeal)}
-                className="bg-slate-100 rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition"
-              >
-                <img
-                  src={recipe.strMealThumb}
-                  alt={recipe.strMeal}
-                  className="w-full h-56 object-cover rounded-md mb-4"
-                />
-                <h3 className="text-xl font-semibold">{recipe.strMeal}</h3>
-                <p className="text-gray-600">{recipe.strArea}</p>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="text-center text-gray-600">
-            No results found for "{query}". Try a country (e.g., Indian),
-            ingredient (e.g., chicken), or recipe name (e.g., Chicken Tikka
-            Masala).
-          </p>
-        )}
+    <>
+      <Navbar />
+      <div className="py-16">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl font-bold text-gray-800 mb-16 text-center">
+            Recipe Results for "{query}"
+          </h1>
+          {loading ? (
+            <p className="text-center text-gray-600">Loading...</p>
+          ) : results.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {results.map((recipe) => (
+                <div
+                  key={recipe.idMeal}
+                  onClick={() => handleRecipeClick(recipe.idMeal)}
+                  className="bg-slate-100 rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition"
+                >
+                  <img
+                    src={recipe.strMealThumb}
+                    alt={recipe.strMeal}
+                    className="w-full h-56 object-cover rounded-md mb-4"
+                  />
+                  <h3 className="text-xl font-semibold">{recipe.strMeal}</h3>
+                  <p className="text-gray-600">{recipe.strArea}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-gray-600">
+              No results found for "{query}". Try a country (e.g., Indian),
+              ingredient (e.g., chicken), or recipe name (e.g., Chicken Tikka
+              Masala).
+            </p>
+          )}
+        </div>
       </div>
-    </section>
+    </>
   );
 };
 

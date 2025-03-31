@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Footer from "./Footer";
+import Navbar from "./NavBar";
 
 const RecipeDetails = () => {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
+  const [isFavorited, setIsFavorited] = useState(false);
 
   useEffect(() => {
     const fetchRecipe = async () => {
@@ -20,6 +22,11 @@ const RecipeDetails = () => {
     };
     fetchRecipe();
   }, [id]);
+  useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const isAlreadyFavorited = favorites.some((fav) => fav.idMeal === id);
+    setIsFavorited(isAlreadyFavorited);
+  }, [id]);
 
   if (!recipe) return <p className="text-center text-gray-600">Loading...</p>;
 
@@ -28,8 +35,29 @@ const RecipeDetails = () => {
     measure: recipe[`strMeasure${i + 1}`],
   })).filter((ing) => ing.name);
 
+  const handleFavoriteToggle = () => {
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (isFavorited) {
+      // Remove from favorites
+      favorites = favorites.filter((fav) => fav.idMeal !== id);
+    } else {
+      // Add to favorites
+      const favoriteRecipe = {
+        idMeal: id,
+        strMeal: recipe.strMeal,
+        strMealThumb: recipe.strMealThumb,
+        strArea: recipe.strArea,
+      };
+      favorites.push(favoriteRecipe);
+    }
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    setIsFavorited(!isFavorited);
+  };
+
   return (
     <>
+      <Navbar />
       <div className="px-36 py-16 mx-auto bg-white rounded-lg overflow-hidden">
         <h1 className="text-4xl text-green-700 font-semibold my-10">
           {recipe.strMeal}
@@ -72,8 +100,15 @@ const RecipeDetails = () => {
               ))}
           </ol>
 
-          <button className="text-green-700 hover:text-green-800 font-semibold">
-            Add to Favorites
+          <button
+            onClick={handleFavoriteToggle}
+            className={`font-semibold px-5 py-2 rounded-lg ${
+              isFavorited
+                ? "text-white bg-red-800"
+                : "text-white bg-green-800 hover:bg-second "
+            }`}
+          >
+            {isFavorited ? "Remove from Favorites" : "Add to Favorites"}
           </button>
         </div>
       </div>
