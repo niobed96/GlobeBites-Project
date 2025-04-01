@@ -68,7 +68,7 @@ const Favorites = () => {
             </div>
           ) : (
             <p className="text-center text-gray-600">
-              You haven’t added any recipes to your favorites yet. Go to a
+              You haven&apos;t added any recipes to your favorites yet. Go to a
               recipe page and click "Add to Favorites" to get started!
             </p>
           )}
