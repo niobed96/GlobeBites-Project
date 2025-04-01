@@ -45,7 +45,7 @@ const RecipeList = () => {
         <h1 className="text-2xl md:text-3xl font-bold">Recipe of the Day</h1>
         <div className="flex flex-col lg:flex-row bg-gray-100 w-full lg:w-3/4 p-5 rounded-2xl mt-5 mb-14">
           <img
-            src="/public/Images/Chicken Tikka Masala.jpg"
+            src="/Images/Chicken Tikka Masala.jpg"
             alt="Chicken Tikka Masala"
             className="w-full lg:w-2/5 rounded-2xl h-60 lg:h-80 object-cover"
           />

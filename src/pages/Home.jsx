@@ -44,7 +44,7 @@ function Home() {
         </div>
         <div className="hidden md:block md:w-6/12  mt-8 md:mt-0">
           <img
-            src="/public/Images/lasagna.png"
+            src="/Images/lasagna.png"
             alt=""
             className="w-full md:w-12/12 rounded-xl"
           />
