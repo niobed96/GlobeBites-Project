@@ -48,30 +48,35 @@ function SearchBar() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center relative">
-        <form onSubmit={handleSearch} className="flex w-2/5">
+      <div className="flex flex-col items-center justify-center relative mx-10 mb-16">
+        <form
+          onSubmit={handleSearch}
+          className=" w-full justify-between flex md:flex-row md:w-6/12"
+        >
           <input
             type="text"
             placeholder="Search by Country or Ingredients"
-            className="px-6 py-2 w-full font-normal border-2 border-gray-600 rounded-3xl items-center outline-none"
+            className="px-6 py-2 w-3/4 md:w-full font-normal border-2 border-solid border-gray-400 hover:shadow-lg rounded-2xl items-center outline-none placeholder:text-gray-500"
             onChange={handleInputChange}
             value={query}
-            onFocus={() => setIsFocused(true)} // Show suggestions on focus
-            onBlur={() => setIsFocused(false)} // Hide suggestions on blur
+            // Show suggestions on focus
+            onFocus={() => setIsFocused(true)}
+            // Hide suggestions on blur
+            onBlur={() => setIsFocused(false)}
           />
           <button
             type="submit"
-            className="px-6 py-2 ml-2 bg-gray-900 text-white font-medium text-lg rounded-full items-center"
+            className="px-6 py-2 ml-2 bg-black text-white font-medium text-lg rounded-2xl items-center flex m-auto "
           >
             Search
           </button>
         </form>
         {isFocused && suggestions.length > 0 && (
-          <ul className="absolute top-14 w-2/5 bg-white border border-gray-300 rounded-xl shadow-lg z-10">
+          <ul className="absolute top-14 w-full md:w-2/5 m-auto bg-white border border-gray-300 rounded-xl shadow-lg z-10 md:mr-28">
             {suggestions.slice(0, 10).map((suggestion, index) => (
               <li
                 key={index}
-                className="px-4 py-2 hover:bg-primary cursor-pointer"
+                className="px-4 py-2 hover:bg-slate-300 rounded-lg cursor-pointer"
                 onMouseDown={() => handleSuggestionClick(suggestion)} // Prevent blur on click
               >
                 {suggestion}

@@ -56,10 +56,12 @@ function SubmitRecipe() {
   return (
     <>
       <Navbar />
-      <div className="px-32 mb-32 font-inter">
-        <h1 className="text-3xl font-semibold">Share Your Recipe</h1>
+      <div className="md:px-32 mb-32 font-inter">
+        <h1 className="text-3xl font-semibold pl-16 md:pl-0">
+          Share Your Recipe
+        </h1>
         <form className="px-16 mt-14 mb-12" onSubmit={handleSubmit}>
-          <div className="grid grid-cols-2 gap-x-32 gap-y-7 mb-12">
+          <div className="grid flex flex-col md:grid-cols-2 md:gap-x-32 md:gap-y-7 gap-y-4 mb-12">
             <div className="flex flex-col">
               <label htmlFor="dishname" className="font-medium">
                 Dish Name

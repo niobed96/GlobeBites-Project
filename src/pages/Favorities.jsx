@@ -26,32 +26,43 @@ const Favorites = () => {
     <>
       <Navbar />
       <div className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-12">
           <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">
             Your Favorite Recipes
           </h1>
           {favorites.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {favorites.map((recipe) => (
                 <div
                   key={recipe.idMeal}
-                  className="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition relative"
+                  className="p-6 cursor-pointer hover:shadow-lg transition rounded-2xl bg-white shadow-lg"
                 >
-                  <div onClick={() => handleRecipeClick(recipe.idMeal)}>
+                  <div>
                     <img
                       src={recipe.strMealThumb}
                       alt={recipe.strMeal}
-                      className="w-full h-48 object-cover rounded-md mb-4"
+                      className="w-full h-72 object-cover rounded-md mb-4"
+                      onClick={() => handleRecipeClick(recipe.idMeal)}
                     />
-                    <h3 className="text-xl font-semibold">{recipe.strMeal}</h3>
-                    <p className="text-gray-600">{recipe.strArea}</p>
+                    <div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-center text-Third">
+                          {recipe.strMeal}
+                        </h3>
+                        <p className="text-gray-600 text-center">
+                          {recipe.strArea}
+                        </p>
+                      </div>
+                      <div className=" w-full flex">
+                        <button
+                          onClick={() => handleRemoveFavorite(recipe.idMeal)}
+                          className=" text-white mt-4 bg-black hover:bg-red-500 font-semibold px-6 rounded-full py-1 m-auto text-center"
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <button
-                    onClick={() => handleRemoveFavorite(recipe.idMeal)}
-                    className="absolute top-2 right-2 text-red-500 hover:text-red-600 font-semibold"
-                  >
-                    Remove
-                  </button>
                 </div>
               ))}
             </div>

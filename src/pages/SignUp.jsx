@@ -10,11 +10,16 @@ function SignUp() {
     confirmPassword: "",
   });
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -69,15 +74,22 @@ function SignUp() {
 
   return (
     <>
-      <div className="flex px-44 my-14 font-inter">
-        <div className="bg-bannerImg w-1/2 h-slvh bg-center bg-cover rounded-xl">
-          <h1 className="text-primary font-bold text-2xl p-10">
-            GLOBE<span className="font-extrabold text-black">BITES</span>
-          </h1>
+      <div className="md:flex md:px-44 my-14 font-inter">
+        <div className="bg-bannerImg w-1/2 h-slvh hidden md:block bg-center bg-cover rounded-xl">
+          <Link to="/">
+            <button className="text-primary font-bold text-2xl p-10">
+              GLOBE<span className="font-extrabold text-black">BITES</span>
+            </button>
+          </Link>
         </div>
+        <Link to="/" className="flex justify-center items-center md:hidden">
+          <button className="text-primary font-bold text-2xl p-10">
+            GLOBE<span className="font-extrabold text-black">BITES</span>
+          </button>
+        </Link>
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col w-1/2 m-auto px-20"
+          className="flex flex-col w-4/5 md:w-1/2 m-auto md:px-20"
         >
           <h1 className="text-center font-bold text-xl mb-8">
             <span className="text-Third">Sign Up</span> for GlobeBites
@@ -109,27 +121,46 @@ function SignUp() {
           <label htmlFor="password" className="font-normal">
             Create Password
           </label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            placeholder="Minimum 8 characters"
-            className="px-5 py-3 border-solid border-2 border-gray-200 rounded-xl bg-gray-100 mt-2 mb-4 outline-none placeholder:text-gray-500"
-          />
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              id="password"
+              name="password"
+              placeholder="Enter Your Password"
+              value={formData.password}
+              onChange={handleChange}
+              className="px-5 py-3 border-solid border-2 border-gray-200 rounded-xl bg-gray-100 mt-2 mb-4 outline-none placeholder:text-gray-500 w-full pr-12"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute inset-y-1/2 right-4 flex items-center text-gray-500 hover:text-gray-700"
+            >
+              {showPassword ? "Hide" : "Show"}
+            </button>
+          </div>
           <label htmlFor="confirmPassword" className="font-normal">
             Confirm Password
           </label>
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            placeholder="Confirm your password"
-            className="px-5 py-3 border-solid border-2 border-gray-200 rounded-xl bg-gray-100 mt-2 mb-4 outline-none placeholder:text-gray-500"
-          />
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirm your password"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              className="px-5 py-3 border-solid border-2 border-gray-200 rounded-xl bg-gray-100 mt-2 mb-4 outline-none placeholder:text-gray-500 w-full pr-12"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute inset-y-1/2 right-4 flex items-center text-gray-500 hover:text-gray-700"
+            >
+              {showPassword ? "Hide" : "Show"}
+            </button>
+          </div>
+
           {error && <p className="text-red-500 text-center mb-4">{error}</p>}
           <button className="bg-black text-white font-semibold py-2 mt-3 mb-5 text-lg rounded-xl">
             Sign Up

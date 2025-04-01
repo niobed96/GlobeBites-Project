@@ -26,42 +26,47 @@ function Home() {
         </h1>
       </div>
       <SearchBar />
-      <div className="flex mx-36 justify-between items-center fon">
-        <div className="flex flex-col w-1/2">
-          <h2 className="text-6xl font-bold mb-6 ">
-            Discover the World’s Flavors
+      {/* Hello Section */}
+      <div className="flex flex-col md:flex-row md:mx-44 justify-between items-center sm:m-auto px-4">
+        <div className="flex flex-col text-center md:text-left">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            Discover the <br /> World’s Flavors
           </h2>
-          <p className="text-2xl w-11/12 mb-6">
-            Explore dishes from different countries and bring global cuisine to
-            your kitchen
+          <p className="text-lg md:text-2xl mb-6">
+            Explore dishes from different countries and <br /> bring global
+            cuisine to your kitchen
           </p>
-          <Link to="/Recipes">
-            <button className="mr-auto bg-Third text-white px-10 py-2 text-2xl rounded-full font-medium">
+          <Link to="/Recipes" className="m-auto md:m-0">
+            <button className="bg-Third text-white px-10 md:px-20 py-2 text-lg md:text-2xl rounded-full font-medium">
               Explore
             </button>
           </Link>
         </div>
-        <div className="w-3/5">
+        <div className="hidden md:block md:w-6/12  mt-8 md:mt-0">
           <img
             src="/public/Images/lasagna.png"
             alt=""
-            className="ml-auto w-12/12"
+            className="w-full md:w-12/12 rounded-xl"
           />
         </div>
       </div>
-      <div className="mx-24 my-10">
-        <h2 className="text-2xl font-bold mb-5">Recommended Recipes</h2>
-        <div className="flex space-x-10">
+
+      {/* Recommended Recipes Section */}
+      <div className="mx-4 md:mx-24 my-10">
+        <h2 className="text-2xl md:text-4xl font-bold mb-5 text-center md:text-left">
+          Recommended Recipes
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {recipes.length > 0 ? (
             recipes.map((recipe) => (
               <div
                 key={recipe.id}
-                className="p-5 rounded-xl shadow-lg bg-slate-100 w-3/5"
+                className="p-5 rounded-xl shadow-lg bg-slate-100"
               >
                 <img
                   src={recipe.image}
                   alt={recipe.title}
-                  className="rounded-xl h-4/5 mb-7"
+                  className="rounded-xl h-72 w-full object-cover mb-7"
                 />
                 <div>
                   <div className="flex justify-between items-center mb-8">
@@ -81,20 +86,24 @@ function Home() {
           )}
         </div>
       </div>
-      <div className="mx-36 my-20 font-inter">
-        <h2 className="text-2xl font-semibold">About Us</h2>
-        <div className="flex justify-between my-20">
-          <div className="bg-Third items-center justify-center -rotate-12 p-3 rounded-3xl w-2/5">
+
+      {/* About Section */}
+      <div className="mx-4 md:mx-36 my-20 font-inter">
+        <h2 className="text-2xl md:text-4xl font-semibold text-center md:text-left">
+          About Us
+        </h2>
+        <div className="flex flex-col md:flex-row justify-between my-20 items-center">
+          <div className="bg-Third items-center justify-center -rotate-12 p-3 rounded-3xl w-4/5 md:w-2/5 mb-10 md:mb-0">
             <img
               src="/public/Images/—Pngtree—healthy food_3776802.png"
               alt=""
               className="m-auto"
             />
           </div>
-          <div className="w-2/5">
+          <div className="w-full md:w-2/5">
             <div>
-              <h3 className="text-lg font-bold mb-3">Mission</h3>
-              <p className="text-lg">
+              <h3 className="text-lg md:text-xl font-bold mb-3">Mission</h3>
+              <p className="text-base md:text-lg">
                 At GlobeBites, we believe food is a universal language that
                 connects us all. Our mission is simple: to bring the world’s
                 flavors to your kitchen, one dish at a time. Whether you’re
@@ -104,12 +113,14 @@ function Home() {
               </p>
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-3 mt-12">What We offer</h3>
-              <p className="text-lg">
+              <h3 className="text-lg md:text-xl font-bold mb-3 mt-12">
+                What We Offer
+              </h3>
+              <p className="text-base md:text-lg">
                 With GlobeBites, you can search for dishes by country, save your
                 favorites for later, and even contribute your own recipes to our
                 growing community. From the "Recommended Recipes" to a treasure
-                trove of global cuisines, we’re your go to spot for culinary
+                trove of global cuisines, we’re your go-to spot for culinary
                 inspiration, no passport required!
               </p>
             </div>
