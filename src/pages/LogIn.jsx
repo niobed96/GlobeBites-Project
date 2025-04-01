@@ -51,7 +51,7 @@ function LogIn() {
   return (
     <>
       <div className="md:flex md:px-44 my-14 font-inter">
-        <div className="bg-bannerImg w-1/2 h-slvh bg-center bg-cover rounded-xl hidden md:block">
+        <div className="bg-bannerlogin w-1/2 h-slvh bg-center bg-cover rounded-xl hidden md:block">
           <Link to="/">
             <button className="text-primary font-bold text-2xl p-10">
               GLOBE<span className="font-extrabold text-black">BITES</span>
