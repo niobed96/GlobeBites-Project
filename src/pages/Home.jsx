@@ -43,11 +43,7 @@ function Home() {
           </Link>
         </div>
         <div className="hidden md:block md:w-6/12  mt-8 md:mt-0">
-          <img
-            src="/Images/lasagna.png"
-            alt=""
-            className="w-full md:w-12/12 rounded-xl"
-          />
+          <img src="/Images/lasagna.png" alt="" className="w-full rounded-xl" />
         </div>
       </div>
 

@@ -19,7 +19,7 @@ function SearchBar() {
 
     if (value.trim()) {
       try {
-        // Fetch suggestions from TheMealDB API
+        // Fetch suggestions from API
         const response = await fetch(
           `https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`
         );
@@ -48,7 +48,7 @@ function SearchBar() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center relative mx-10 mb-16">
+      <div className="flex flex-col items-center justify-center relative mx-10 mb-2">
         <form
           onSubmit={handleSearch}
           className=" w-full justify-between flex md:flex-row md:w-6/12"
@@ -77,7 +77,8 @@ function SearchBar() {
               <li
                 key={index}
                 className="px-4 py-2 hover:bg-slate-300 rounded-lg cursor-pointer"
-                onMouseDown={() => handleSuggestionClick(suggestion)} // Prevent blur on click
+                // Prevent blur on click
+                onMouseDown={() => handleSuggestionClick(suggestion)}
               >
                 {suggestion}
               </li>
