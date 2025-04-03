@@ -94,7 +94,7 @@ function Home() {
         <div className="flex flex-col md:flex-row justify-between my-20 items-center">
           <div className="bg-Third items-center justify-center -rotate-12 p-3 rounded-3xl w-4/5 md:w-2/5 mb-10 md:mb-0">
             <img
-              src="/public/Images/—Pngtree—healthy food_3776802.png"
+              src="/Images/—Pngtree—healthy food_3776802.png"
               alt=""
               className="m-auto"
             />
