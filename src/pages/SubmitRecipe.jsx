@@ -61,7 +61,7 @@ function SubmitRecipe() {
           Share Your Recipe
         </h1>
         <form className="px-16 mt-14 mb-12" onSubmit={handleSubmit}>
-          <div className="grid flex flex-col md:grid-cols-2 md:gap-x-32 md:gap-y-7 gap-y-4 mb-12">
+          <div className="grid flex flex-col lg:grid-cols-2 lg:gap-x-32 lg:gap-y-7 gap-y-4 mb-12">
             <div className="flex flex-col">
               <label htmlFor="dishname" className="font-medium">
                 Dish Name

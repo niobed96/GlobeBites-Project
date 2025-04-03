@@ -27,22 +27,25 @@ function Home() {
       </div>
       <SearchBar />
       {/* Hello Section */}
-      <div className="flex flex-col md:flex-row md:mx-44 justify-between items-center sm:m-auto px-4">
-        <div className="flex flex-col text-center md:text-left">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Discover the <br /> World’s Flavors
+      <div className="flex flex-col lg:flex-row lg:mx-44 lg:justify-between items-center sm:m-auto px-4">
+        <div className="flex flex-col text-center  md:justify-center md:text-left">
+          <h2 className="text-4xl lg:text-6xl md:text-5xl md:text-center lg:text-left lg:w-2/3 font-bold my-6">
+            Discover the World’s Flavors
           </h2>
-          <p className="text-lg md:text-2xl mb-6">
+          <p className="text-lg lg:text-2xl mb-6 md:text-center lg:text-left">
             Explore dishes from different countries and <br /> bring global
             cuisine to your kitchen
           </p>
-          <Link to="/Recipes" className="m-auto md:m-0">
+          <Link
+            to="/Recipes"
+            className="flex justify-center lg:justify-normal m-auto md:m-0"
+          >
             <button className="bg-Third text-white px-10 md:px-20 py-2 text-lg md:text-2xl rounded-full font-medium">
               Explore
             </button>
           </Link>
         </div>
-        <div className="hidden md:block md:w-6/12  mt-8 md:mt-0">
+        <div className="hidden lg:block lg:w-6/12 mt-8 lg:mt-0">
           <img src="/Images/lasagna.png" alt="" className="w-full rounded-xl" />
         </div>
       </div>

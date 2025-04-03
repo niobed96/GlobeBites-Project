@@ -51,7 +51,7 @@ function SearchBar() {
       <div className="flex flex-col items-center justify-center relative mx-10 mb-2">
         <form
           onSubmit={handleSearch}
-          className=" w-full justify-between flex md:flex-row md:w-6/12"
+          className=" w-full md:w-4/6 justify-between flex lg:flex-row lg:w-6/12"
         >
           <input
             type="text"
